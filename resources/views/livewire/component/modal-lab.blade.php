@@ -28,7 +28,7 @@ aria-hidden="true">
                                 <tr>
                                     <th>Nama lab</th>
                                     <th>Satuan</th>
-                                    <th>Harga</th>
+                                    {{-- <th>Harga</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>

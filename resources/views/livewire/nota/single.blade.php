@@ -18,13 +18,24 @@ $cek = DB::table("medical_record_drugs")
         {!! Carbon::createFromFormat('Y-m-d H:i:s', $transaksi->created_at)->isoFormat('D MMMM Y') !!}
     </td>
     <td>Rp. {{ number_format(floatval($transaksi->payment)) }}</td>
-    <td>
+    {{-- <td>
         @foreach (json_decode($cek) as $item)
         <ul>
             @foreach ($item as $i => $key)
             <li>
                 {{ $key }}
             </li>
+            @endforeach
+        </ul>
+        @endforeach
+    </td> --}}
+
+
+    <td>
+        @foreach (json_decode($cek) as $item)
+        <ul>
+            @foreach($item as $i => $key)
+            <li>{{$key}} ({{$key->pivot->instruction ?? "-"}})</li>
             @endforeach
         </ul>
         @endforeach

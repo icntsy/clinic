@@ -8,13 +8,19 @@
     <td>
         <ul>
             @foreach($record->labs as $lab)
-            <li>{{$lab->nama}} ({{$lab->pivot->result ?? "-"}} {{$lab->satuan}})</li>
+            <li>{{$lab->nama}} ({{$lab->pivot->result ?? "-"}})</li>
             @endforeach
         </ul>
+        {{-- <ul>
+            @foreach($record->labs as $lab)
+            <li>{{$lab->nama}} ({{$lab->pivot->result ?? "-"}} {{$lab->satuan}})</li>
+            @endforeach
+        </ul> --}}
     </td>
-    <td><ul>
+<td>
+    <ul>
         @foreach($record->diagnoses as $diagnosis)
-        <li>{{$diagnosis->indonesian_name }}</li>
+        <li>{{$diagnosis->indonesian_name }} ({{$diagnosis->pivot->description ?? "-"}})</li>
         @endforeach
     </ul>
 </td>
